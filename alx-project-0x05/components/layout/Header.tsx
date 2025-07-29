@@ -1,8 +1,6 @@
+import React from "react";
 import Link from "next/link";
-import Button from "../common/Button";
 import { usePathname } from "next/navigation";
-// Update the import path below to the correct relative path based on your project structure.
-// For example, if CountContext.tsx is in 'alx-project-0x05/context/CountContext.tsx':
 import { useCount } from "../../context/CountContext";
 
 const Header: React.FC = () => {
@@ -10,7 +8,7 @@ const Header: React.FC = () => {
   const { count } = useCount();
 
   return (
-    <header className="fixed w-full bg-white shadow-md">
+    <header className="fixed w-full bg-white shadow-md z-10">
       <div className="container mx-auto flex justify-between items-center py-6 px-4 md:px-8">
         <Link
           href="/"
@@ -23,17 +21,19 @@ const Header: React.FC = () => {
         <div className="flex gap-4">
           {!["/counter-app"].includes(pathname) ? (
             <>
-              <Button
-                buttonLabel="Sign In"
-                buttonBackgroundColor="red"
-              />
-              <Button
-                buttonLabel="Sign Up"
-                buttonBackgroundColor="blue"
-              />
+              <button
+                className="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-6 rounded transition duration-300"
+              >
+                Sign In
+              </button>
+              <button
+                className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-6 rounded transition duration-300"
+              >
+                Sign Up
+              </button>
             </>
           ) : (
-            <p className=" font-semibold text-lg">Current count : {count}</p>
+            <p className="font-semibold text-lg">Current count: {count}</p>
           )}
         </div>
       </div>
