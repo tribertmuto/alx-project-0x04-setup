@@ -1,11 +1,20 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
+    "jsx": "react-jsx",
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
     "paths": {
       "@/*": ["./*"],
       "@/components/*": ["components/*"],
       "@/styles/*": ["styles/*"],
       "@/context/*": ["context/*"]
     }
-  }
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js",
+    "**/*.jsx"
+  ]
 } 
